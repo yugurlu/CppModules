@@ -15,16 +15,12 @@ int main()
     {
         cout << "Please enter a command: ";
         cin >> command;
-        if(!command.compare("ADD")){
+        if(!command.compare("ADD"))
             phoneBook.addContact();
-        }
-        else if(!command.compare("SEARCH")){
+        else if(!command.compare("SEARCH"))
             phoneBook.search();
-        }
-        else if(!command.compare("EXIT")){
-            cout << "byyy" << endl;
+        else if(!command.compare("EXIT"))
             return (1);
-        }
         else
             cout << "Command not found! Please try again" << endl;
     }

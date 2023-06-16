@@ -42,19 +42,24 @@ void PhoneBook::addContact(void)
 {
     string value;
     cout << "Name: ";
-    cin >> value;
+    std::cin.ignore();
+    std::getline(std::cin, value);
     this->contacts[this->totalContacts % 8].setName(value);
     cout << "Surname: ";
-    cin >> value;
+    std::cin.ignore();
+    std::getline(std::cin, value);
     this->contacts[this->totalContacts % 8].setSurname(value);
     cout << "Nickname: ";
-    cin >> value;
+    std::cin.ignore();
+    std::getline(std::cin, value);
     this->contacts[this->totalContacts % 8].setNickname(value);
     cout << "Phone Number: ";
-    cin >> value;
+    std::cin.ignore();
+    std::getline(std::cin, value);
     this->contacts[this->totalContacts % 8].setPhoneNumber(value);
     cout << "Darkest Secret: ";
-    cin >> value;
+    std::cin.ignore();
+    std::getline(std::cin, value);
     this->contacts[this->totalContacts % 8].setSecret(value);
     this->totalContacts++;
 }
@@ -90,8 +95,7 @@ void PhoneBook::search(void)
         string index;
         cout << "Please enter index:" << endl;
         cin >> index;
-
-        if (index.length() > 1 || isdigit(index[0]))
+        if (index.length() > 1 || !isdigit(index[0]))
         {
             cout << "Wrong index!" << endl;
         }
