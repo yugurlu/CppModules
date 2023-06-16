@@ -10,13 +10,13 @@ class PhoneBook
         Contact contacts[8];
         int totalContacts;
     public:
-        PhoneBook(){
-            this->totalContacts = 0;
-        };
+        PhoneBook();
+        ~PhoneBook();
         int getTotalContacts(void);
         void setTotalContacts(void);
         void addContact(void);
         void getContact(int);
+        void search(void);
 };
 
 #endif

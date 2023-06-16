@@ -9,9 +9,23 @@ using std::endl;
 
 int main()
 {
-    //test
+    string command;
     PhoneBook phoneBook;
-    phoneBook.addContact();
-    cout << phoneBook.getTotalContacts() << endl;
-    phoneBook.getContact(0);
+    while (true)
+    {
+        cout << "Please enter a command: ";
+        cin >> command;
+        if(!command.compare("ADD")){
+            phoneBook.addContact();
+        }
+        else if(!command.compare("SEARCH")){
+            phoneBook.search();
+        }
+        else if(!command.compare("EXIT")){
+            cout << "byyy" << endl;
+            return (1);
+        }
+        else
+            cout << "Command not found! Please try again" << endl;
+    }
 }
