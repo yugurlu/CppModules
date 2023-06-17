@@ -86,7 +86,7 @@ void PhoneBook::addContact(void)
 
 void PhoneBook::search(void)
 {
-    cout << endl << "     index|      name|    number|  nickname|";
+    cout << endl << "     index|      name|   surname|  nickname|";
     cout << endl << "--------------------------------------------" << endl;
     for (int i = 0; i < (getTotalContacts() > 8 ? 8 : getTotalContacts()); i++)
     {
@@ -98,12 +98,12 @@ void PhoneBook::search(void)
         else
             cout << this->contacts[i].getName() << "|";
 
-        for (int space = 0; space < (int)(10 - this->contacts[i].getPhoneNumber().length()); space++)
+        for (int space = 0; space < (int)(10 - this->contacts[i].getSurname().length()); space++)
             cout << " ";
-        if(this->contacts[i].getPhoneNumber().length() > 10)
-            cout << this->contacts[i].getPhoneNumber().substr(0, 9) << ".|";
+        if(this->contacts[i].getSurname().length() > 10)
+            cout << this->contacts[i].getSurname().substr(0, 9) << ".|";
         else
-            cout << this->contacts[i].getPhoneNumber() << "|";
+            cout << this->contacts[i].getSurname() << "|";
 
         for (int space = 0; space < (int)(10 - this->contacts[i].getNickname().length()); space++)
             cout << " ";
