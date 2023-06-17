@@ -1,18 +1,18 @@
 
+all: Phonebook
 
-all:Phonebook
+Phonebook: main.o PhoneBook.o Contact.o
+	@c++ -Wall -Wextra -Werror -std=c++98 main.cpp PhoneBook.cpp Contact.cpp -o Phonebook
 
-Phonebook: PhoneBook.o
-	@c++ -Wall -Wextra -Werror -std=c++98 main.cpp Contact.cpp PhoneBook.cpp -o Phonebook
-
-
-PhoneBook.o:
-	@c++ -Wall -Wextra -Werror -std=c++98 main.cpp Contact.cpp PhoneBook.cpp -c
+main.o PhoneBook.o Contact.o:
+	@c++ -Wall -Wextra -Werror -std=c++98 main.cpp PhoneBook.cpp Contact.cpp -c
 
 clean:
-	@rm main.o Contact.o PhoneBook.o
+	@rm -rf main.o PhoneBook.o Contact.o
 
 fclean: clean
-	@rm Phonebook
+	@rm -rf Phonebook
 
-re: fclean all
+re:	fclean all
+
+.PHONY = all re fclean clean

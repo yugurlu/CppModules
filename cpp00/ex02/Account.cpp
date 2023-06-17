@@ -58,7 +58,7 @@ void Account::displayStatus(void) const
     cout << "index:" << this->_accountIndex << ";";
     cout << "amount:" <<  this->_amount << ";" ;
     cout << "deposits:" << this->_nbDeposits << ";";
-    cout << "whitdrawals:" << this->_nbWithdrawals << endl;
+    cout << "withdrawals:" << this->_nbWithdrawals << endl;
 }
 
 void Account::displayAccountsInfos(void)
@@ -100,9 +100,9 @@ bool Account::makeWithdrawal(int whitdrawal)
         this->_totalAmount -= whitdrawal;
         this->_nbWithdrawals++;
         this->_totalNbWithdrawals++;
-        cout << "whitdrawal:" << whitdrawal << ";";
+        cout << "withdrawal:" << whitdrawal << ";";
         cout << "amount:" << this->_amount << ";";
-        cout << "nb_whitdrawals:" << this->_nbWithdrawals << endl;
+        cout << "nb_withdrawals:" << this->_nbWithdrawals << endl;
         return (true);
     }
 }

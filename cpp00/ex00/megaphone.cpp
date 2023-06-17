@@ -2,6 +2,9 @@
 #include <string.h>
 #include <iostream>
 
+using std::cout;
+using std::endl;
+
 int main(int ac, char **av)
 {
     int i = 0;
@@ -11,10 +14,10 @@ int main(int ac, char **av)
         {
             int j = 0;
             while (av[i][j])
-                std::cout << (char)toupper(av[i][j++]);
-            std::cout << " ";
+                cout << (char)toupper(av[i][j++]);
+            cout << " ";
         }
     }
-    else std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-    std::cout << std::endl;
+    else cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+    cout << endl;
 }

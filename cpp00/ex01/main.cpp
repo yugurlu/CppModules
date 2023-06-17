@@ -6,6 +6,7 @@
 using std::cin;
 using std::cout;
 using std::endl;
+using std::getline;
 
 int main()
 {
@@ -14,14 +15,16 @@ int main()
     while (true)
     {
         cout << "Please enter a command: ";
-        cin >> command;
-        if(!command.compare("ADD"))
+        getline(cin, command);
+        if(!command.compare("ADD") && !cin.eof())
             phoneBook.addContact();
-        else if(!command.compare("SEARCH"))
+        else if(!command.compare("SEARCH") && !cin.eof())
             phoneBook.search();
-        else if(!command.compare("EXIT"))
+        else if(!command.compare("EXIT") && !cin.eof())
             return (1);
-        else
-            cout << "Command not found! Please try again" << endl;
+        else if (!cin.eof())
+            cout << "\033[31m" << "Command not found! Please try again" << "\033[0m" << endl;
+        if (cin.eof())
+            break;
     }
 }
