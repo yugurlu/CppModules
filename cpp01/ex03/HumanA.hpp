@@ -10,10 +10,10 @@ using std::string;
 class HumanA
 {
     private:
-        Weapon weapon;
         string name;
+        Weapon *weapon;
     public:
-        HumanA(string, Weapon);
+        HumanA(string, Weapon &);
         void attack(void);
 };
 
