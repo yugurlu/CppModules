@@ -4,6 +4,11 @@
 
 #include "Contact.hpp"
 
+using std::cin;
+using std::cout;
+using std::endl;
+using std::getline;
+
 class PhoneBook
 {
     private:
