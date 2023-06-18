@@ -2,12 +2,6 @@
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
-
-int Contact::getIndex(void)
-{
-    return (this->index);
-}
-
 string Contact::getName(void)
 {
     return (this->name);
@@ -31,11 +25,6 @@ string Contact::getPhoneNumber(void)
 string Contact::getSecret(void)
 {
     return (this->darkestSecret);
-}
-
-void Contact::setIndex(int index)
-{
-    this->index = index;
 }
 
 void Contact::setName(string name)
