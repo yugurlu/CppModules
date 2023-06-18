@@ -20,5 +20,4 @@ class Harl
         void complain(string);
 };
 
-
 #endif
