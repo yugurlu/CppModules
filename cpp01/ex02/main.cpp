@@ -9,7 +9,7 @@ int main()
 {
     string str = "HI THIS IS BRAIN";
     string *stringPTR = &str;
-    string *stringREF = stringPTR;
+    string &stringREF = *stringPTR;
 
     cout << &str << endl;
     cout << &stringPTR << endl;
@@ -17,6 +17,6 @@ int main()
 
     cout << str << endl;
     cout << *stringPTR << endl;
-    cout << *stringREF << endl;
+    cout << stringREF << endl;
 
 }

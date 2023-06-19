@@ -7,5 +7,4 @@ int main()
     for (int i = 0; i < 5; i++)
         zombies[i].announce();
     delete [] zombies;
-    //zombies[0].announce();
 }
