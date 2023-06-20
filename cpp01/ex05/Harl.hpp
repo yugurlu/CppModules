@@ -3,7 +3,6 @@
 #define HARL_HPP
 
 #include <iostream>
-#include <map>
 
 using std::cout;
 using std::endl;

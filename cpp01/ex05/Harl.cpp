@@ -26,12 +26,11 @@ void Harl::error(void)
 
 void Harl::complain(string level)
 {
-    std::map<std::string, void (Harl::*)()> levelMappings;
-    levelMappings["debug"] = &Harl::debug;
-    levelMappings["info"] = &Harl::info;
-    levelMappings["warning"] = &Harl::warning;
-    levelMappings["error"] = &Harl::error;
+    int i = 0;
+    string commandList[] = {"debug", "info", "warning", "error"};
+    void (Harl::*funcArray[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
-    if (levelMappings.count(level) != 0)
-        (this->*(levelMappings[level]))();
+    while (i < 5 &&  commandList[i].compare(level)) i++;
+    if (i < 4 || commandList[0] == level)
+        (this->*funcArray[i])();
 }

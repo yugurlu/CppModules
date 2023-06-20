@@ -7,6 +7,25 @@ using std::cout;
 using std::endl;
 using std::string;
 
+std::string wordChange(string &str, string &searchWord, string &replaceWord)
+{
+    string result;
+    int startPos = 0;
+    int foundPos = str.find(searchWord, startPos);
+
+    while ((std::string::size_type)foundPos != std::string::npos)
+    {
+        result.append(str, startPos, foundPos - startPos);
+        result.append(replaceWord);
+
+        startPos = foundPos + searchWord.length();
+        foundPos = str.find(searchWord, startPos);
+    }
+    result.append(str, startPos);
+
+    return result;
+}
+
 int main(int ac, char **argv)
 {
     if (ac == 4)
@@ -22,14 +41,8 @@ int main(int ac, char **argv)
             string line;
             while (std::getline(file, line))
             {
-                if(line.find(s1) == std::string::npos)
-                    new_file << line << endl;
-                else
-                {
-                    new_file << line.substr(0, line.find(s1));
-                    new_file << s2;
-                    new_file << line.substr(line.find(s1) + s1.length()) << endl;
-                }
+                line = wordChange(line, s1, s2);
+                new_file << line << endl;
             }
         }
         else

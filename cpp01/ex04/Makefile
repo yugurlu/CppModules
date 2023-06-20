@@ -13,6 +13,6 @@ clean:
 fclean: clean
 	@rm -rf Prog
 
-re: fclean re
+re: fclean all
 
 .PHONY = all re fclean clean
