@@ -14,7 +14,6 @@ class Weapon
     private:
         string type;
     public:
-        Weapon();
         Weapon(string);
         void setType(string);
         const string& getType(void);

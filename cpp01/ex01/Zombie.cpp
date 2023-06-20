@@ -1,7 +1,6 @@
 
 #include "Zombie.hpp"
 
-
 Zombie::Zombie()
 {
     cout << "Zombie created!" << endl;
