@@ -12,7 +12,7 @@ int main()
     string &stringREF = *stringPTR;
 
     cout << &str << endl;
-    cout << &stringPTR << endl;
+    cout << stringPTR << endl;
     cout << &stringREF << endl;
 
     cout << str << endl;
