@@ -51,4 +51,5 @@ class Fixed
 };
 
 ostream	&operator << (ostream &o, const Fixed &fixed);
+
 #endif

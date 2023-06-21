@@ -15,6 +15,10 @@ class Point
         Point(const Fixed, const Fixed);
         Point(const Point &);
         Point &operator = (const Point &);
+        int getX(void) const;
+        int getY(void) const;
 };
+
+bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif
