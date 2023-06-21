@@ -10,7 +10,7 @@ using std::endl;
 class Fixed
 {
     private:
-        int number;
+        int fixedNumber;
         static const int bits = 8;
     public:
         Fixed();

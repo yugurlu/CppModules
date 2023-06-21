@@ -11,7 +11,7 @@ using std::endl;
 class Fixed
 {
     private:
-        int number;
+        int fixedNumber;
         static const int bits = 8;
     public:
         Fixed();
@@ -22,10 +22,10 @@ class Fixed
         Fixed &operator=(const Fixed &);
         int getRawBits(void);
         void setRawBits(int);
-        //float toFloat(void) const;
-        //int toInt(void) const;
+        int toInt(void) const;
+        float toFloat(void) const;
 };
 
-std::ostream	&operator<<(std::ostream &o, Fixed &fixed);
+std::ostream    &operator << (std::ostream &o, const Fixed &fixed);
 
 #endif

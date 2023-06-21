@@ -3,7 +3,7 @@
 
 Fixed::Fixed(void)
 {
-    this->number = 0;
+    this->fixedNumber = 0;
     cout << "Default constructor called" << endl;
 }
 
@@ -15,23 +15,23 @@ Fixed::~Fixed(void)
 Fixed::Fixed(const Fixed &copy)
 {
     cout << "Copy constructor called" << endl;  
-    this->number = copy.number;
+    this->fixedNumber = copy.fixedNumber;
 }
 
 Fixed	&Fixed::operator=(const Fixed &copy)
 {
     cout << "Copy assignment operator called" << endl;
-    this->number = copy.number;
+    this->fixedNumber = copy.fixedNumber;
     return *this;
 }
 
 int Fixed::getRawBits(void)
 {
     cout << "getRawBits member function called" << endl;
-    return this->number;
+    return this->fixedNumber;
 }
 
-void Fixed::setRawBits(int number)
+void Fixed::setRawBits(int fixedNumber)
 {
-    this->number = number;
+    this->fixedNumber = fixedNumber;
 }

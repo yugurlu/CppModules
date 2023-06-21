@@ -2,10 +2,13 @@
 all: Fixed
 
 Fixed: main.o Fixed.o
-	@c++ -Wall -Wextra -Werror -std=c++98 Fixed.cpp main.cpp -o Fixed
+	@g++ -Wall -Wextra -Werror -std=c++98 Fixed.o main.o -o Fixed
 
-main.o Fixed.o:
-	@c++ -Wall -Wextra -Werror -std=c++98 Fixed.cpp main.cpp -c
+main.o: main.cpp Fixed.hpp
+	@g++ -Wall -Wextra -Werror -std=c++98 -c main.cpp
+
+Fixed.o: Fixed.cpp Fixed.hpp
+	@g++ -Wall -Wextra -Werror -std=c++98 -c Fixed.cpp
 
 clean:
 	@rm -rf main.o Fixed.o
@@ -15,4 +18,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY = all clean fclean re
+.PHONY: all clean fclean re
