@@ -19,8 +19,6 @@ class Fixed
         Fixed	&operator=(const Fixed &);
         void setRawBits(int);
         int getRawBits(void);
-
 };
-
 
 #endif

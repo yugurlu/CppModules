@@ -47,8 +47,8 @@ class Fixed
         static Fixed   &max(Fixed &fixed1, Fixed &fixed2);
         static Fixed const &min(const Fixed &fixed1, const Fixed &fixed2);
         static Fixed const &max(const Fixed &fixed1, const Fixed &fixed2);
-
 };
 
 ostream	&operator << (ostream &o, const Fixed &fixed);
+
 #endif

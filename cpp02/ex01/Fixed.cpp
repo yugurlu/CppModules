@@ -39,6 +39,7 @@ Fixed	&Fixed::operator=(const Fixed &copy)
 
 int Fixed::getRawBits(void)
 {
+    cout << "getRawBits member function called" << endl;
     return this->fixedNumber;
 }
 

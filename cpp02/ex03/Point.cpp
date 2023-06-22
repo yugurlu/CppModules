@@ -1,7 +1,9 @@
 
 #include "Point.hpp"
 
-Point::~Point(void){}
+Point::Point(void) : x(0), y(0) {}
+
+Point::~Point(void) {}
 
 Point::Point(const Fixed x, const Fixed y) : x(x), y(y) {}
 

@@ -110,26 +110,26 @@ bool    Fixed::operator != (const Fixed &fixed)
 Fixed   Fixed::operator ++ (int)
 {
     Fixed temp = *this;
-    ++this->fixedNumber;
+    this->fixedNumber++;
     return temp;
 }
 
 Fixed   Fixed::operator -- (int)
 {
     Fixed temp = *this;
-    ++this->fixedNumber;
+    this->fixedNumber--;
     return temp;
 }
 
 Fixed   Fixed::operator ++ (void)
 {
-    this->fixedNumber++;
+    ++this->fixedNumber;
     return *this;
 }
 
 Fixed   Fixed::operator -- (void)
 {
-    this->fixedNumber++;
+    --this->fixedNumber;
     return *this;
 }
 

@@ -10,7 +10,7 @@ class Point
         const Fixed x;
         const Fixed y;
     public:
-        Point() : x(0), y(0) {}
+        Point();
         ~Point();
         Point(const Fixed, const Fixed);
         Point(const Point &);
