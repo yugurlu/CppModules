@@ -15,23 +15,23 @@ Fixed::~Fixed(void)
 Fixed::Fixed(const Fixed &copy)
 {
     cout << "Copy constructor called" << endl;  
-    this->fixedNumber = copy.fixedNumber;
+    *this = copy;
 }
 
 Fixed	&Fixed::operator=(const Fixed &copy)
 {
     cout << "Copy assignment operator called" << endl;
-    this->fixedNumber = copy.fixedNumber;
+    this->fixedNumber = copy.getRawBits();
     return *this;
 }
 
-int Fixed::getRawBits(void)
+int Fixed::getRawBits(void) const
 {
     cout << "getRawBits member function called" << endl;
     return this->fixedNumber;
 }
 
-void Fixed::setRawBits(int fixedNumber)
+void Fixed::setRawBits(int const fixedNumber)
 {
     this->fixedNumber = fixedNumber;
 }

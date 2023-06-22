@@ -4,45 +4,37 @@
 Fixed::Fixed(void)
 {
     this->fixedNumber = 0;
-    cout << "Default constructor called" << endl;
 }
 
 Fixed::Fixed(const int fixedNumber)
 {
-    cout << "Int constructor called" << endl;
     this->fixedNumber = fixedNumber * (1 << this->bits);
 }
 
 Fixed::Fixed(const float fixedNumber)
 {
-    cout << "Float constructor called" << endl;
     this->fixedNumber = roundf(fixedNumber * (1 << this->bits));
 }
 
-Fixed::~Fixed(void)
-{
-    cout << "Destructor called" << endl;
-}
+Fixed::~Fixed(void) {}
 
 Fixed::Fixed(const Fixed &copy)
 {
-    cout << "Copy constructor called" << endl;  
     this->fixedNumber = copy.fixedNumber;
 }
 
 Fixed	&Fixed::operator=(const Fixed &copy)
 {
-    cout << "Copy assignment operator called" << endl;
     this->fixedNumber = copy.fixedNumber;
     return *this;
 }
 
-int Fixed::getRawBits(void)
+int Fixed::getRawBits(void) const
 {
     return this->fixedNumber;
 }
 
-void Fixed::setRawBits(int fixedNumber)
+void Fixed::setRawBits(int const fixedNumber)
 {
     this->fixedNumber = fixedNumber;
 }

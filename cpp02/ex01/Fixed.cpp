@@ -37,13 +37,13 @@ Fixed	&Fixed::operator=(const Fixed &copy)
     return *this;
 }
 
-int Fixed::getRawBits(void)
+int Fixed::getRawBits(void) const
 {
     cout << "getRawBits member function called" << endl;
     return this->fixedNumber;
 }
 
-void Fixed::setRawBits(int fixedNumber)
+void Fixed::setRawBits(int const fixedNumber)
 {
     this->fixedNumber = fixedNumber;
 }
