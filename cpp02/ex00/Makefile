@@ -2,13 +2,13 @@
 all: Fixed
 
 Fixed: main.o Fixed.o
-	@g++ -Wall -Wextra -Werror -std=c++98 Fixed.o main.o -o Fixed
+	@c++ -Wall -Wextra -Werror -std=c++98 Fixed.o main.o -o Fixed
 
 main.o: main.cpp Fixed.hpp
-	@g++ -Wall -Wextra -Werror -std=c++98 -c main.cpp
+	@c++ -Wall -Wextra -Werror -std=c++98 -c main.cpp
 
 Fixed.o: Fixed.cpp Fixed.hpp
-	@g++ -Wall -Wextra -Werror -std=c++98 -c Fixed.cpp
+	@c++ -Wall -Wextra -Werror -std=c++98 -c Fixed.cpp
 
 clean:
 	@rm -rf main.o Fixed.o
