@@ -3,12 +3,16 @@
 
 ClapTrap::ClapTrap(void)
 {
-    cout << "Default constructor called" << endl;
+    this->name = "undefined";
+    this->hitPoint = 10;
+    this->energyPoint = 10;
+    this->attackDamage = 0;
+    cout << "ClapTrap default constructor called" << endl;
 }
 
 ClapTrap::~ClapTrap(void)
 {
-    cout << "Destructor called" << endl;
+    cout << "ClapTrap destructor called" << endl;
 }
 
 ClapTrap::ClapTrap(string name)
@@ -17,6 +21,7 @@ ClapTrap::ClapTrap(string name)
     this->hitPoint = 10;
     this->energyPoint = 10;
     this->attackDamage = 0;
+    cout << "ClapTrap constructor called" << endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy)

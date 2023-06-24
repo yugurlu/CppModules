@@ -1,21 +1,24 @@
 
-all: ClapTrap
+all: ScavTrap
 
-ClapTrap: ClapTrap.o main.o
-	@c++ -Wall -Wextra -Werror -std=c++98 ClapTrap.o main.o -o ClapTrap
+ScavTrap: ScavTrap.o ClapTrap.o main.o
+	@c++ -Wall -Wextra -Werror -std=c++98 ScavTrap.o ClapTrap.o main.o -o ScavTrap
 
-ClapTrap.o: ClapTrap.cpp ClapTrap.hpp
+ScavTrap.o: ScavTrap.cpp ScavTrap.hpp ClapTrap.hpp
+	@c++ -Wall -Wextra -Werror -std=c++98 -c ScavTrap.cpp
+
+ClapTrap.o: ClapTrap.cpp ScavTrap.hpp ClapTrap.hpp
 	@c++ -Wall -Wextra -Werror -std=c++98 -c ClapTrap.cpp
 
-main.o: main.cpp ClapTrap.hpp
+main.o: main.cpp ScavTrap.hpp ClapTrap.hpp
 	@c++ -Wall -Wextra -Werror -std=c++98 -c main.cpp
 
 clean:
-	@rm -rf ClapTrap.o main.o
+	@rm -rf ScavTrap.o ClapTrap.o main.o
 
 fclean: clean
-	@rm -rf ClapTrap
+	@rm -rf ScavTrap
 
-re: fclean re
+re: fclean all
 
 .PHONY: all clean fclean re

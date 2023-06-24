@@ -17,8 +17,8 @@ class ClapTrap
         int attackDamage;
     public:
         ClapTrap();
-        ClapTrap(string);
         ~ClapTrap();
+        ClapTrap(string);
         ClapTrap(const ClapTrap &);
         ClapTrap &operator = (const ClapTrap &);
 

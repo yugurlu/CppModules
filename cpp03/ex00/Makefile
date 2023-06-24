@@ -16,6 +16,6 @@ clean:
 fclean: clean
 	@rm -rf ClapTrap
 
-re: fclean re
+re: fclean all
 
 .PHONY: all clean fclean re
