@@ -16,7 +16,7 @@ DiamondTrap::~DiamondTrap(void)
 	cout << "DiamondTrap destructor called" << endl;
 }
 
-DiamondTrap::DiamondTrap(string name) : ScavTrap(name + "_calp_name"), FragTrap(name + "_clap_name")
+DiamondTrap::DiamondTrap(string name) : ScavTrap(name + "_clap_name"), FragTrap(name + "_clap_name")
 {
     this->name = name;
     this->hitPoint = this->FragTrap::hitPoint;
