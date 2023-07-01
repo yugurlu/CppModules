@@ -17,15 +17,19 @@ Dog::~Dog()
 Dog::Dog(const Dog &copy)
 {
     *this = copy;
+    this->brain = new Brain(*copy.brain);
 }
 
-Dog &operator = (const Dog &copy)
+Dog &Dog::operator = (const Dog &copy)
 {
+    if (this != &copy)
+        *this = copy;
     *this = copy;
+    this->brain = new Brain(*copy.brain);
     return *this;
 }
 
-void    Dog::makeSound(void)
+void    Dog::makeSound(void) const
 {
     cout << "*BARKING SOUNDS*" << endl;
 }

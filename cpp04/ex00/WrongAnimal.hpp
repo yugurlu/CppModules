@@ -4,9 +4,9 @@
 
 #include <iostream>
 
-using std::endl
-using std::cout
-using std::string
+using std::endl;
+using std::cout;
+using std::string;
 
 class WrongAnimal
 {
@@ -15,11 +15,11 @@ class WrongAnimal
     public:
 	    WrongAnimal();
 	    virtual ~WrongAnimal();
-	    WrongAnimal(WrongAnimal &);
+	    WrongAnimal(const WrongAnimal &);
 	    WrongAnimal &operator = (const WrongAnimal &r);
 
-	    virtual void    makeSound(void);
-        void    getType(void);
+	    virtual void    makeSound(void) const;
+        string    getType(void) const;
 };
 
 #endif

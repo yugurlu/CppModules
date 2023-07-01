@@ -16,8 +16,9 @@ Brain::Brain(const Brain &copy)
     *this = copy;
 }
 
-Brain   &operator = (const Brain &copy)
+Brain   &Brain::operator = (const Brain &copy)
 {
-    *this = copy;
+    if (this != &copy)
+        *this = copy;
     return *this;
 }

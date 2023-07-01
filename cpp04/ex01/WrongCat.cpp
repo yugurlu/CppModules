@@ -17,13 +17,14 @@ WrongCat::WrongCat(const WrongCat &copy)
     *this = copy;
 }
 
-WrongCat &operator = (const WrongCat &copy)
+WrongCat &WrongCat::operator = (const WrongCat &copy)
 {
-    *this = copy;
+    if (this != &copy)
+        *this = copy;
     return *this;
 }
 
-void    WrongCat::makeSound(void)
+void    WrongCat::makeSound(void) const
 {
     cout << "*WRONG MEOWING SOUNDS*" << endl;
 }

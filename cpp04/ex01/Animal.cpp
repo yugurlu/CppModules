@@ -16,18 +16,19 @@ Animal::Animal(const Animal &copy)
     *this = copy;
 }
 
-Animal  &operator = (const Animal &copy)
+Animal  &Animal::operator = (const Animal &copy)
 {
-    *this = copy;
+    if (this != &copy)
+        *this = copy;
     return *this;
 }
 
-void    Animal::makeSound(void)
+void    Animal::makeSound(void) const
 {
     cout << "*ANIMAL SOUNDS*" << endl;
 }
 
-string  Animal::getType(void)
+string  Animal::getType(void) const
 {
     return this->type;
 }

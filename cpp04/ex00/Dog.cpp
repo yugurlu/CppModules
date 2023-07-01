@@ -17,13 +17,14 @@ Dog::Dog(const Dog &copy)
     *this = copy;
 }
 
-Dog &operator = (const Dog &copy)
+Dog &Dog::operator = (const Dog &copy)
 {
-    *this = copy;
+    if (this != &copy)
+        *this = copy;
     return *this;
 }
 
-void    Dog::makeSound(void)
+void    Dog::makeSound(void) const
 {
     cout << "*BARKING SOUNDS*" << endl;
 }

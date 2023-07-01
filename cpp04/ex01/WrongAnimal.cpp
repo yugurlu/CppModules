@@ -16,18 +16,19 @@ WrongAnimal::WrongAnimal(const WrongAnimal &copy)
     *this = copy;
 }
 
-WrongAnimal &operator = (const WrongAnimal &copy)
+WrongAnimal &WrongAnimal::operator = (const WrongAnimal &copy)
 {
-    *this = copy;
+    if (this != &copy)
+        *this = copy;
     return *this;
 }
 
-void    WrongAnimal::makeSound(void)
+void    WrongAnimal::makeSound(void) const
 {
     cout << "*WRONG ANIMAL SOUNDS???*" << endl;
 }
 
-string  WrongAnimal::getType(void)
+string  WrongAnimal::getType(void) const
 {
     return this->type;
 }

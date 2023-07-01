@@ -17,13 +17,14 @@ Cat::Cat(const Cat &copy)
     *this = copy;
 }
 
-Cat &operator = (const Cat &copy)
+Cat &Cat::operator = (const Cat &copy)
 {
-    *this = copy;
+    if (this != &copy)
+        *this = copy;
     return *this;
 }
 
-void    Cat::makeSound(void)
+void    Cat::makeSound(void) const
 {
     cout << "*MEOWING SOUNDS*" << endl;
 }
