@@ -4,8 +4,7 @@
 MateriaSource::MateriaSource()
 {
     for (int i = 0; i < 4; i++)
-        this->metaria[i] = NULL;
-    
+        this->metaria[i] = NULL;   
 }
 
 MateriaSource::~MateriaSource(){}
