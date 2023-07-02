@@ -31,6 +31,7 @@ int main()
     delete test;
     delete test2;
 
+    //system("leaks Animals");
 
     return 0;
 }
