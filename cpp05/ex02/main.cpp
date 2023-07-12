@@ -3,10 +3,11 @@
 
 int main()
 {
-    AForm form("form", 100, 100);
-    Bureaucrat bur(100, "burTest");
-    ShrubberyCreationForm test("test");
+    Bureaucrat bureaucrat(146, "bureaucrat");
+    ShrubberyCreationForm shrubbery("shrubbery");
 
-    bur.signFrom();
-    test.execute(bur);
+
+    bureaucrat.signFrom(shrubbery);
+    bureaucrat.setGrade(136);
+    shrubbery.execute(bureaucrat);
 }

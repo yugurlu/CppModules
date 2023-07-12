@@ -4,7 +4,7 @@
 
 #include "Bureaucrat.hpp"
 
-class   ShrubberyCreationForm : AForm
+class   ShrubberyCreationForm : public AForm
 {
     private:
         string target;

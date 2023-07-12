@@ -24,13 +24,13 @@ int ShrubberyCreationForm::executer_control(const Bureaucrat &executor)
     try
     {
         if (this->getSign() == false)
-            throw "Form is not signed";
+            throw FormNotSigned();
         else if (executor.getGrade() > this->getExecGrade())
             throw GradeTooHighException();
     }
     catch (std::exception &e)
     {
-        cout << "exception fail" << endl;
+        cout << e.what();
         return 0;
     }
     return 1;
@@ -52,5 +52,8 @@ void    ShrubberyCreationForm::execute(const Bureaucrat &executor)
         file << "       |o|        | |         | |" << endl;
         file << "       |.|        | |         | |" << endl;
         file << "jgs \\\\/ .\\_\\/\\_/__/  ,\\_//__\\\\/.  \\_//__/" << endl;
+
+        file.close();
     }
+    
 }

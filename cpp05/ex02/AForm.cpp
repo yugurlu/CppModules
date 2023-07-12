@@ -55,10 +55,15 @@ ostream &operator << (ostream &os, const AForm &AForm)
 
 const char *AForm::GradeTooLowException::what() const throw()
 {
-	return "Grade Too Low! Grade needs to be between 1 and 150\n";
+	return "Grade Too Low!\n";
 }
 
 const char *AForm::GradeTooHighException::what() const throw()
 {
-	return "Grade Too High! Grade needs to be between 1 and 150\n";
+	return "Grade Too High!\n";
+}
+
+const char *AForm::FormNotSigned::what() const throw()
+{
+    return "Form is not signed!\n";
 }
