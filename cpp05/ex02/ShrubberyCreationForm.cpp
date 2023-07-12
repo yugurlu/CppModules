@@ -19,26 +19,9 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator = (const ShrubberyCreatio
     return *this;
 }
 
-int ShrubberyCreationForm::executer_control(const Bureaucrat &executor)
-{
-    try
-    {
-        if (this->getSign() == false)
-            throw FormNotSigned();
-        else if (executor.getGrade() > this->getExecGrade())
-            throw GradeTooHighException();
-    }
-    catch (std::exception &e)
-    {
-        cout << e.what();
-        return 0;
-    }
-    return 1;
-}
-
 void    ShrubberyCreationForm::execute(const Bureaucrat &executor)
 {
-    if (executer_control(executor))
+    if (this->executer_control(executor))
     {
         ofstream file(this->target + "_shrubbery");
 

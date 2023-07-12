@@ -3,6 +3,7 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include "Bureaucrat.hpp"
+#include <time.h>
 
 class   RobotomyRequestForm : public AForm
 {
@@ -16,7 +17,6 @@ class   RobotomyRequestForm : public AForm
         RobotomyRequestForm &operator = (const RobotomyRequestForm &);
 
         void    execute(Bureaucrat const & executor);
-        int     executer_control(Bureaucrat const & executor);
 };
 
 #endif

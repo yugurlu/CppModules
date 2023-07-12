@@ -33,6 +33,8 @@ class   AForm
         
         void beSigned(Bureaucrat &);
 
+        bool    executer_control(const Bureaucrat &executor);
+
         class GradeTooLowException: public std::exception
         {
 	        public:
