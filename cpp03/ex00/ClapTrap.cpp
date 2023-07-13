@@ -48,7 +48,6 @@ void    ClapTrap::takeDamage(unsigned int amount)
         this->hitPoint -= amount;
         cout << "ClapTrap " << this->name << " " << amount << " takes damage and ";
         cout << this->hitPoint << " hit points remaining!" << endl;
-
     }
     else
         cout << "ClapTrap " << this->name << " no hitPoint or energyPoint!" << endl;
