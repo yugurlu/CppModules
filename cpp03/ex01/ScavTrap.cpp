@@ -43,6 +43,8 @@ void ScavTrap::attack(const string &target)
         cout << "ScavTrap " << this->name << " attacks " << target << ", causing ";
         cout << this->attackDamage << " point of damage!" << endl;
     }
+    else
+        cout << "ScavTrap " << this->name << " no hitPoint or energyPoint!" << endl;
 }
 
 void ScavTrap::guardGate(void)
