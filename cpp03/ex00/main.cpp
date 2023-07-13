@@ -10,5 +10,5 @@ int main()
     a.takeDamage(10);
     a.attack("enemy");
     a.takeDamage(10);
-    a.beRepaired(1);
+    a.attack("enemy");
 }

@@ -1,21 +1,24 @@
 
+
+SRC = ClapTrap.cpp \
+	main.cpp
+
+OBJS = $(SRC:.cpp=.o)
+
 all: ClapTrap
 
-ClapTrap: ClapTrap.o main.o
-	@c++ -Wall -Wextra -Werror -std=c++98 ClapTrap.o main.o -o ClapTrap
+ClapTrap: $(OBJS)
+	@c++ -Wall -Wextra -Werror -std=c++98 $(OBJS) -o ClapTrap
 
-ClapTrap.o: ClapTrap.cpp ClapTrap.hpp
-	@c++ -Wall -Wextra -Werror -std=c++98 -c ClapTrap.cpp
-
-main.o: main.cpp ClapTrap.hpp
-	@c++ -Wall -Wextra -Werror -std=c++98 -c main.cpp
+.cpp.o:
+	@c++ -Wall -Wextra -Werror -std=c++98 -c $< -o $@
 
 clean:
-	@rm -rf ClapTrap.o main.o
+	@rm -rf $(OBJS)
 
 fclean: clean
 	@rm -rf ClapTrap
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY:	all clean fclean re
