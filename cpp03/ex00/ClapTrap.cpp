@@ -26,18 +26,13 @@ ClapTrap::ClapTrap(string name)
 
 ClapTrap::ClapTrap(const ClapTrap &copy)
 {
-    this->name = copy.name;
-    this->hitPoint = copy.hitPoint;
-    this->energyPoint = copy.energyPoint;
-    this->attackDamage = copy.attackDamage;
+    *this = copy;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &copy)
 {
-    this->name = copy.name;
-    this->hitPoint = copy.hitPoint;
-    this->energyPoint = copy.energyPoint;
-    this->attackDamage = copy.attackDamage;
+    if (this != &copy)
+        *this = copy;
     return *this;
 }
 

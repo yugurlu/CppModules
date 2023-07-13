@@ -32,7 +32,8 @@ DiamondTrap::DiamondTrap(const DiamondTrap &copy)
 
 DiamondTrap &DiamondTrap::operator = (const DiamondTrap &copy)
 {
-    (void)copy;
+    if (this != &copy)
+        *this = copy;
     return *this;
 }
 

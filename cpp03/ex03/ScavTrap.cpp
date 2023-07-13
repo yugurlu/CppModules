@@ -26,18 +26,13 @@ ScavTrap::ScavTrap(string name) : ClapTrap(name)
 
 ScavTrap::ScavTrap(const ScavTrap &copy)
 {
-    this->name = copy.name;
-    this->hitPoint = copy.hitPoint;
-    this->energyPoint = copy.energyPoint;
-    this->attackDamage = copy.attackDamage;
+    *this = copy;
 }
 
-ScavTrap &ScavTrap::operator = (const ScavTrap &copy)
+ScavTrap &ScavTrap::operator=(const ScavTrap &copy)
 {
-    this->name = copy.name;
-    this->hitPoint = copy.hitPoint;
-    this->energyPoint = copy.energyPoint;
-    this->attackDamage = copy.attackDamage;
+    if (this != &copy)
+        *this = copy;
     return *this;
 }
 

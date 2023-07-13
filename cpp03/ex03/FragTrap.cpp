@@ -26,18 +26,13 @@ FragTrap::FragTrap(string name) : ClapTrap(name)
 
 FragTrap::FragTrap(const FragTrap &copy)
 {
-    this->name = copy.name;
-    this->hitPoint = copy.hitPoint;
-    this->energyPoint = copy.energyPoint;
-    this->attackDamage = copy.attackDamage;
+    *this = copy;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &copy)
 {
-    this->name = copy.name;
-    this->hitPoint = copy.hitPoint;
-    this->energyPoint = copy.energyPoint;
-    this->attackDamage = copy.attackDamage;
+    if (this != &copy)
+        *this = copy;
     return *this;
 }
 
