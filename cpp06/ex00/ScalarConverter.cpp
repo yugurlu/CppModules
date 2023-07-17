@@ -24,30 +24,7 @@ ScalarConverter &ScalarConverter::operator = (const ScalarConverter &copy)
 
 void    ScalarConverter::convert(void)
 {
-    //is float
-    std::istringstream iss(this->value);
-    float value;
-    char remainingChar = 0;
-    int flag = 0;
-
-    if ((iss >> value && !(iss >> remainingChar)) || remainingChar == 'f')
-    {
-        flag = 1;
-        cout << "float" << endl;
-    }
-    else
-        cout << "not float" << endl;
-
-    if (flag)
-    {
-        try
-        {
-            float value = std::stof(this->value);
-            cout << value << endl;
-        }
-        catch (const std::invalid_argument&)
-        {
-            cout << "convert fail" << endl;
-        }
-    }
+    //1- first choice type
+    //2- and stages -> print char/int/float/double (if cond)
+    //3- thats it!
 }
