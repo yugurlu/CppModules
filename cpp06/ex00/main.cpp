@@ -1,8 +1,13 @@
 
 #include "ScalarConverter.hpp"
 
-int main()
+int main(int ac, char **av)
 {
-    ScalarConverter test("65.9");
-    test.convert();
+    if (ac == 2)
+    {
+        ScalarConverter test(av[1]);
+        test.convert();
+    }
+    else
+        cout << "wrong arguments entry!" << endl;
 }
