@@ -3,6 +3,6 @@
 
 int main()
 {
-    ScalarConverter test("4.42f");
+    ScalarConverter test("65.9");
     test.convert();
 }
