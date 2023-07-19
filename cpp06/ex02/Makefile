@@ -1,15 +1,15 @@
 
-SRC = A.cpp \
+SRC = Base.cpp \
+	A.cpp \
 	B.cpp \
 	C.cpp \
-	Base.cpp \
 	main.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
 all: Base
 
-Serialize: $(OBJS)
+Base: $(OBJS)
 	@c++ -Wall -Wextra -Werror -std=c++98 $(OBJS) -o Base
 
 .cpp.o:
