@@ -134,7 +134,4 @@ void    ScalarConverter::convert(void)
     this->printInt();
     this->printFloat();
     this->printDouble();
-	//1- first choice type
-	//2- and stages -> print char/int/float/double (if cond)
-	//3- thats it!
 }
