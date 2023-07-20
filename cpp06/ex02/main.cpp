@@ -32,7 +32,27 @@ void    identify(Base *p)
 
 void    identify(Base &p)
 {
-    
+    try
+    {
+        A &castRef = dynamic_cast<A&>(p);
+        cout << "Type is A" << endl;
+        (void)castRef;
+    }
+    catch (std::bad_cast &e) {}
+    try
+    {
+        B &castRef = dynamic_cast<B&>(p);
+        cout << "Type is B" << endl;
+        (void)castRef;
+    }
+    catch (std::bad_cast &e) {}
+    try
+    {
+        C &castRef = dynamic_cast<C&>(p);
+        cout << "Type is C" << endl;
+        (void)castRef;
+    }
+    catch (std::bad_cast &e) {}
 }
 
 int main()
@@ -40,5 +60,7 @@ int main()
     Base *p = generate();
 
     identify(p);
+    identify(*p);
 
+    delete p;
 }
