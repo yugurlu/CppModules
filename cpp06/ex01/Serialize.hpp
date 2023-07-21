@@ -10,8 +10,8 @@ using std::string;
 
 typedef struct s_Data
 {
-    string name;
     string login;
+    string password;
 }               Data;
 
 class   Serialize

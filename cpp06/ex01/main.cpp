@@ -6,15 +6,13 @@ int main()
     Data data;
     Serialize serialize;
 
-    data.name = "yusuf";
-    data.login = "yugurlu";
+    data.login = "yusuf";
+    data.password = "12345";
 
     uintptr_t raw = serialize.serialize(&data);
     cout << "uintptr_r format -> " << raw << endl;
     
     Data *reverse = serialize.deserailze(raw);
-    cout << reverse->name << endl;
     cout << reverse->login << endl;
-
-
+    cout << reverse->password << endl;
 }

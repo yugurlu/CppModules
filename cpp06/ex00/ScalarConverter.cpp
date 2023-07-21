@@ -1,13 +1,9 @@
 
 #include "ScalarConverter.hpp"
 
-ScalarConverter::ScalarConverter()
-{
-}
+ScalarConverter::ScalarConverter() {}
 
-ScalarConverter::~ScalarConverter()
-{
-}
+ScalarConverter::~ScalarConverter() {}
 
 ScalarConverter::ScalarConverter(string value)
 {
@@ -30,14 +26,14 @@ void    ScalarConverter::chooseType(void)
 {
     if (this->value == "nan")
         this->type = "nan";
-	else if (std::all_of(this->value.begin(), this->value.end(), ::isalpha)) //CHAR
+	else if (std::all_of(this->value.begin(), this->value.end(), ::isalpha))
     {
         if (this->value.length() == 1)
             this->type = "char";
         else
             this->type = "string";
     }
-    else if (std::all_of(this->value.begin(), this->value.end(), ::isdigit)) //INT
+    else if (std::all_of(this->value.begin(), this->value.end(), ::isdigit))
         this->type = "int";
     else if (this->value[this->value.length() - 1] == 'f')
     {
