@@ -1,2 +1,2 @@
-# cpp_modules
+# CppModules
 42 Cursus Projects
