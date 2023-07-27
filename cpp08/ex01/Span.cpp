@@ -3,7 +3,12 @@
 
 Span::Span()
 {
-    this->len = 0;
+    this->maxLen = 0;
+}
+
+Span::Span(int maxLen)
+{
+    this->maxLen = maxLen;
 }
 
 Span::~Span() {}
@@ -22,19 +27,19 @@ Span    &Span::operator = (const Span &copy)
 
 void    Span::addNumber(int number)
 {
-
-    if (this->len == 0 || *std::find(this->N.begin(),this->N.end(), number) == 0)
-    {
-        this->len++;
+    if ((this->N.size() == 0 || *std::find(this->N.begin(),this->N.end(), number) == 0) && this->N.size() != this->maxLen)
         this->N.push_back(number);
-    }
     else
-        throw "Numnber already added!";
+    {
+
+        cout << number << endl;
+        throw "Number already added!";
+    }
 }
 
 int Span::longestSpan(void)
 {
-    if (this->len > 1)
+    if (this->N.size() > 1)
         return (*std::max_element(this->N.begin(), this->N.end()) - *std::min_element(this->N.begin(), this->N.end()));
     else
         throw "Insufficient number of numbers!";
@@ -42,7 +47,7 @@ int Span::longestSpan(void)
 
 int Span::shortestSpan(void)
 {
-    if (this->len > 1)
+    if (this->N.size() > 1)
         return (*std::min_element(this->N.begin(), this->N.end()) - *std::max_element(this->N.begin(), this->N.end()));
     else
         throw "Insufficient number of numbers!";

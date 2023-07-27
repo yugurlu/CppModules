@@ -12,10 +12,11 @@ using std::endl;
 class   Span
 {
     private:
-        unsigned int len;
+        unsigned int maxLen;
         std::vector<int> N;
     public:
         Span();
+        Span(int);
         ~Span();
         Span(const Span &);
         Span    &operator = (const Span &);
