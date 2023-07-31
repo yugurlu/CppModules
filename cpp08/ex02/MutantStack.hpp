@@ -2,10 +2,8 @@
 #ifndef MUTANTSTACK_HPP
 #define MUTANTSTACK_HPP
 
-#include <vector>
 #include <stack>
 #include <iostream>
-#include <algorithm>
 
 using std::cout;
 using std::endl;
