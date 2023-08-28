@@ -24,7 +24,7 @@ void    BitcoinExchange::getDatabase(void)
     
     std::getline(databaseFile, databaseFileLine);
 
-    std::map<std::string, double> dataMap;
+    std::map<string, double> dataMap;
 
     while (std::getline(databaseFile, databaseFileLine))
     {
@@ -61,7 +61,6 @@ void    BitcoinExchange::readInputAndExchange(void)
             }
             else
                 return throw string("Error: bad input => " + line.substr(0,10));
-
             if (year < 0 || month > 12 || month < 0 || day > 30 || day < 0)
                 return throw string("Error: bad input => " + line.substr(0,10));
             if (value < 0)
@@ -82,7 +81,7 @@ void    BitcoinExchange::readInputAndExchange(void)
 void    BitcoinExchange::searchInDatabaseAndPrint(string year, string value)
 {
     bool flag;
-    std::map<std::string, float>::iterator it = this->database.begin();
+    std::map<string, float>::iterator it = this->database.begin();
 
     while (it != this->database.end())
     {
