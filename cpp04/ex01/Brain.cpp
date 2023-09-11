@@ -18,7 +18,6 @@ Brain::Brain(const Brain &copy)
 
 Brain   &Brain::operator = (const Brain &copy)
 {
-    cout << "overload" << endl;
     if (this != &copy)
     {
         for (int i = 0; i < 100; i++)
