@@ -31,20 +31,21 @@ AForm   *Intern::makeForm(const string &formName, const string &target)
         "robotomy request"
         };
 
-    for (int i; i < 3; i++)
+    for (int i = 0; i < 3; i++)
     {
         if (names[i] == formName)
         {
-            for (int j; j < 3; j++)
+            for (int j = 0; j < 3; j++)
             {
                 if (i != j)
-                    delete forms[i];
+                    delete forms[j];
             }
             cout << "Intern creates " << formName << endl;
             return forms[i];
         }
     }
-    for (int i; i < 3; i++)
+    for (int i = 0; i < 3; i++)
         delete forms[i];
+    cout << formName << ":" << " Incorrect form name!" << endl;
     return NULL;
 }

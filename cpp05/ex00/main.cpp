@@ -13,6 +13,6 @@ int main()
 	}
 	catch (std::exception &e)
 	{
-		cout << e.what() << endl;
+		cout << e.what();
 	}
 }
