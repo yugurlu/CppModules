@@ -31,11 +31,3 @@ void    RobotomyRequestForm::execute(Bureaucrat const &executor)
             cout << this->target << " has been robotomize failed" << endl;
     }
 }
-
-
-
-
-
-
-
-
