@@ -10,4 +10,8 @@ int main()
     AForm* rrf;
 
     rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+
+    Bureaucrat b(149, "test");
+    b.signFrom(*rrf);
+    rrf->execute(b);
 }

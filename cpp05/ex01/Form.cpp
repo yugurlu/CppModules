@@ -1,6 +1,8 @@
 
 #include "Form.hpp"
 
+AForm::AForm() : sign(false) , grade(1), name(""), execGrade(1) {}
+
 Form::Form(string name, int grade, int execGrade) : sign(false), grade(grade), name(name), execGrade(execGrade) {}
 
 Form::Form(const Form &copy) : grade(copy.grade), name(copy.name), execGrade(copy.execGrade) {}

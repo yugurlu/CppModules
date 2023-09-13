@@ -3,7 +3,7 @@
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("default", 72, 45) {}
 
-RobotomyRequestForm::RobotomyRequestForm(const string &target) : AForm(target, 72, 45) {}
+RobotomyRequestForm::RobotomyRequestForm(const string &target) : AForm(target, 72, 45) , target(target) {}
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
 
@@ -19,7 +19,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator = (const RobotomyRequestForm 
     return *this;
 }
 
-void    RobotomyRequestForm::execute(Bureaucrat const &executor)
+void    RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
     if(this->executer_control(executor))
     {

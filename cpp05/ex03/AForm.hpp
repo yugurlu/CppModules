@@ -21,7 +21,7 @@ class   AForm
         const int execGrade;
     public:
         AForm();
-        ~AForm();
+        virtual ~AForm();
         AForm(const AForm &);
         AForm &operator = (const AForm &);
         AForm(string name, int grade, int execGrade);
@@ -33,7 +33,8 @@ class   AForm
         
         void beSigned(Bureaucrat &);
 
-        bool    executer_control(const Bureaucrat &executor);
+        virtual void execute(Bureaucrat const & executor) const = 0;
+        bool    executer_control(const Bureaucrat &executor) const;
 
         class GradeTooLowException: public std::exception
         {
@@ -50,6 +51,7 @@ class   AForm
             public:
                 virtual const char *what()const throw();
         };
+
 };
 
 ostream &operator << (ostream &os, const AForm &);

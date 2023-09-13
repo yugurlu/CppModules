@@ -3,7 +3,7 @@
 
 PresidentialPardonForm::PresidentialPardonForm() : AForm("default", 25, 5) {}
 
-PresidentialPardonForm::PresidentialPardonForm(const string &target) : AForm((target), 25, 5) {}
+PresidentialPardonForm::PresidentialPardonForm(const string &target) : AForm(target, 25, 5), target(target) {}
 
 PresidentialPardonForm::~PresidentialPardonForm() {}
 
@@ -19,7 +19,7 @@ PresidentialPardonForm  &PresidentialPardonForm::operator = (const PresidentialP
     return *this;
 }
 
-void    PresidentialPardonForm::execute(Bureaucrat const &executor)
+void    PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
     if (this->executer_control(executor))
         cout << this->target << " has been pardoned by Zaphod Beeblebrox" << endl;

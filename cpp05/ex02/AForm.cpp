@@ -68,7 +68,7 @@ const char *AForm::FormNotSigned::what() const throw()
     return "Form is not signed!\n";
 }
 
-bool    AForm::executer_control(const Bureaucrat &executor)
+bool    AForm::executer_control(const Bureaucrat &executor) const
 {
     try
     {

@@ -68,13 +68,13 @@ const char *AForm::FormNotSigned::what() const throw()
     return "Form is not signed!\n";
 }
 
-bool    AForm::executer_control(const Bureaucrat &executor)
+bool    AForm::executer_control(const Bureaucrat &executor) const
 {
     try
     {
         if (this->getSign() == false)
             throw FormNotSigned();
-        else if (executor.getGrade() > this->getExecGrade())
+        else if (executor.getGrade() < this->getExecGrade())
             throw GradeTooHighException();
     }
     catch (std::exception &e)

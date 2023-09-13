@@ -19,7 +19,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator = (const ShrubberyCreatio
     return *this;
 }
 
-void    ShrubberyCreationForm::execute(const Bureaucrat &executor)
+void    ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 {
     if (this->executer_control(executor))
     {
