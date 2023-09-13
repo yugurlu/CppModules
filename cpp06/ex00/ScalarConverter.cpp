@@ -61,13 +61,13 @@ void    ScalarConverter::printChar(void)
 {
     cout << "char: ";
     if (this->type == "char")
-        cout << this->value << endl;
+        cout << '\'' << this->value << '\'' << endl;
     else if (this->type == "int")
     {
         if ((0 <= atoi(this->value.c_str()) && atoi(this->value.c_str()) <= 31) || atoi(this->value.c_str()) > 127)
             cout << "Non displayable" << endl;
         else
-            cout << (char)atoi(this->value.c_str()) << endl;
+            cout << '\'' << (char)atoi(this->value.c_str()) << '\'' << endl;
     }
     else if (this->type == "float" || this->type == "double")
     {
