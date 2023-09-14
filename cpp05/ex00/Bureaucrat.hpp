@@ -19,6 +19,9 @@ class   Bureaucrat
         int getGrade(void) const;
         string  getName(void) const;
 
+        void    incrementGrade(void);
+        void    decrementGrade(void);
+
 
 	class GradeTooLowException: public std::exception
     {

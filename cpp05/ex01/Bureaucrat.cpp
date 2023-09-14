@@ -20,6 +20,20 @@ string  Bureaucrat::getName(void) const
     return  this->name;
 }
 
+void    Bureaucrat::incrementGrade(void)
+{
+    if (this->grade + 1 > 150)
+        throw GradeTooHighException();
+    this->grade += 1;
+}
+
+void    Bureaucrat::decrementGrade(void)
+{
+    if (this->grade - 1 > 1)
+        throw GradeTooLowException();
+    this->grade -= 1;
+}
+
 void Bureaucrat::signFrom(Form &form)
 {
     if (form.getSign() == false)
