@@ -21,7 +21,10 @@ Span::Span(const Span &copy)
 Span    &Span::operator = (const Span &copy)
 {
     if (this != &copy)
-        *this = copy;
+    {
+        this->maxLen = copy.maxLen;
+        this->N = copy.N;
+    }
     return *this;
 }
 
