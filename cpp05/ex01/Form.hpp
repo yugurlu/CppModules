@@ -20,7 +20,7 @@ class   Form
         const string name;
         const int execGrade;
     public:
-        AForm();
+        Form();
         Form(const Form &);
         ~Form();
         Form &operator = (const Form &);

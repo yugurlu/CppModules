@@ -1,9 +1,15 @@
 
 #include "Form.hpp"
 
-AForm::AForm() : sign(false) , grade(1), name(""), execGrade(1) {}
+Form::Form() : sign(false), grade(1), name(""), execGrade(1) {}
 
-Form::Form(string name, int grade, int execGrade) : sign(false), grade(grade), name(name), execGrade(execGrade) {}
+Form::Form(string name, int grade, int execGrade) : sign(false), grade(grade), name(name), execGrade(execGrade)
+{
+    if(this->grade > 150 || this->execGrade > 150)
+        throw GradeTooHighException();
+    else if (this->grade < 1 || this->execGrade < 1) 
+        throw GradeTooLowException();
+}
 
 Form::Form(const Form &copy) : grade(copy.grade), name(copy.name), execGrade(copy.execGrade) {}
 
@@ -55,10 +61,10 @@ ostream &operator << (ostream &os, const Form &form)
 
 const char *Form::GradeTooLowException::what() const throw()
 {
-	return "Grade Too Low!n";
+	return "Grade Too Low! Grade needs to be between 1 and 150";
 }
 
 const char *Form::GradeTooHighException::what() const throw()
 {
-	return "Grade Too High!\n";
+	return "Grade Too High! Grade needs to be between 1 and 150";
 }

@@ -3,7 +3,13 @@
 
 AForm::AForm() : sign(false) , grade(1), name(""), execGrade(1) {}
 
-AForm::AForm(string name, int grade, int execGrade) : sign(false), grade(grade), name(name), execGrade(execGrade) {}
+AForm::AForm(string name, int grade, int execGrade) : sign(false), grade(grade), name(name), execGrade(execGrade)
+{
+    if(this->grade > 150 || this->execGrade > 150)
+        throw GradeTooHighException();
+    else if (this->grade < 1 || this->execGrade < 1) 
+        throw GradeTooLowException();
+}
 
 AForm::AForm(const AForm &copy) : grade(copy.grade), name(copy.name), execGrade(copy.execGrade) {}
 
@@ -55,32 +61,24 @@ ostream &operator << (ostream &os, const AForm &AForm)
 
 const char *AForm::GradeTooLowException::what() const throw()
 {
-	return "Grade Too Low!\n";
+	return "Grade Too Low! Grade needs to be between 1 and 150";
 }
 
 const char *AForm::GradeTooHighException::what() const throw()
 {
-	return "Grade Too High!\n";
+	return "Grade Too High! Grade needs to be between 1 and 150";
 }
 
 const char *AForm::FormNotSigned::what() const throw()
 {
-    return "Form is not signed!\n";
+    return "Form is not signed!";
 }
 
 bool    AForm::executer_control(const Bureaucrat &executor) const
 {
-    try
-    {
-        if (this->getSign() == false)
-            throw FormNotSigned();
-        else if (executor.getGrade() > this->getExecGrade())
-            throw GradeTooHighException();
-    }
-    catch (std::exception &e)
-    {
-        cout << e.what();
-        return false;
-    }
+    if (this->getSign() == false)
+        throw FormNotSigned();
+    else if (executor.getGrade() < this->getExecGrade())
+        throw GradeTooHighException();
     return true;
 }

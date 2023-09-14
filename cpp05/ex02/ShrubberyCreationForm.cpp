@@ -3,7 +3,7 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("default", 145, 137) {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(const string &target) : AForm("Shrubbery", 145, 137) , target(target) {}
+ShrubberyCreationForm::ShrubberyCreationForm(const string &target) : AForm(target, 145, 137) , target(target) {}
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
@@ -34,7 +34,7 @@ void    ShrubberyCreationForm::execute(const Bureaucrat &executor) const
         file << "   `&%\\ ` /%&'    |.|        \\ '|8'" << endl;
         file << "       |o|        | |         | |" << endl;
         file << "       |.|        | |         | |" << endl;
-        file << "jgs \\\\/ .\\_\\/\\_/__/  ,\\_//__\\\\/.  \\_//__/" << endl;
+        file << "\\\\/ .\\_\\/\\_/__/  ,\\_//__\\\\/.  \\_//__/" << endl;
 
         file.close();
     }

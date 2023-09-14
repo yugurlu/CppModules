@@ -4,9 +4,9 @@
 Bureaucrat::Bureaucrat(int grade, string name) : name(name)
 {
     if(grade > 150)
-        throw GradeTooLowException();
-    else if (grade < 1) 
         throw GradeTooHighException();
+    else if (grade < 1) 
+        throw GradeTooLowException();
     this->grade = grade;
 }
 
@@ -47,10 +47,10 @@ ostream& operator << (ostream& os, const Bureaucrat &arg)
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "Grade Too Low! Grade needs to be between 1 and 150\n";
+	return "Grade Too Low! Grade needs to be between 1 and 150";
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return "Grade Too High! Grade needs to be between 1 and 150\n";
+	return "Grade Too High! Grade needs to be between 1 and 150";
 }

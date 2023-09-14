@@ -3,11 +3,19 @@
 
 int main()
 {
-    Bureaucrat bureaucrat(146, "bureaucrat");
-    ShrubberyCreationForm shrubbery("shrubbery");
 
+    try
+    {
+        Bureaucrat bureaucrat(149, "bureaucrat");
+        ShrubberyCreationForm shrubbery("shrubbery");
 
-    bureaucrat.signFrom(shrubbery);
-    bureaucrat.setGrade(136);
-    shrubbery.execute(bureaucrat);
+        bureaucrat.signFrom(shrubbery);
+        bureaucrat.setGrade(138);
+        shrubbery.execute(bureaucrat);
+    }
+    catch (std::exception &e)
+    {
+        cout << e.what() << endl;
+    }
+    
 }

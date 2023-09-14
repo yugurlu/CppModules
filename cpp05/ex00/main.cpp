@@ -3,8 +3,15 @@
 
 int main()
 {
-    Bureaucrat a(15, "test");
-    cout << a << endl;
+	try
+	{
+		Bureaucrat a(15, "test");
+    	cout << a << endl;
+	}
+	catch (std::exception &e)
+	{
+		cout << e.what() << endl;
+	}
 
 	try
 	{
@@ -13,6 +20,6 @@ int main()
 	}
 	catch (std::exception &e)
 	{
-		cout << e.what();
+		cout << e.what() << endl;
 	}
 }
