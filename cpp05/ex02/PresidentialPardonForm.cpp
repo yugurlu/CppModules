@@ -14,8 +14,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &cop
 
 PresidentialPardonForm  &PresidentialPardonForm::operator = (const PresidentialPardonForm &copy)
 {
-    if (this != &copy)
-        *this = copy;
+    (void)copy;
     return *this;
 }
 

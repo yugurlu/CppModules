@@ -3,7 +3,6 @@
 
 int main()
 {
-
     try
     {
         Bureaucrat bureaucrat(149, "bureaucrat");
@@ -16,6 +15,5 @@ int main()
     catch (std::exception &e)
     {
         cout << e.what() << endl;
-    }
-    
+    } 
 }

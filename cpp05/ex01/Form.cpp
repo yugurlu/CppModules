@@ -21,7 +21,7 @@ Form::~Form()
 Form    &Form::operator = (const Form &copy)
 {
     if (this != &copy)
-        *this = copy;
+        this->sign = copy.getSign();
     return *this;
 }
 

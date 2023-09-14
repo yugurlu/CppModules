@@ -14,8 +14,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy)
 
 RobotomyRequestForm &RobotomyRequestForm::operator = (const RobotomyRequestForm &copy)
 {
-    if (this != &copy)
-        *this = copy;
+    (void)copy;
     return *this;
 }
 

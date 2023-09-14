@@ -21,7 +21,7 @@ AForm::~AForm()
 AForm    &AForm::operator = (const AForm &copy)
 {
     if (this != &copy)
-        *this = copy;
+        this->sign = copy.getSign();
     return *this;
 }
 
