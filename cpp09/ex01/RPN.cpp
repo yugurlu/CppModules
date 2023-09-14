@@ -13,7 +13,13 @@ RPN::RPN(const RPN &copy)
 RPN &RPN::operator = (const RPN &copy)
 {
     if (this != &copy)
-        *this = copy;
+    {
+        this->input = copy.input;
+        for (int i = 0; this->numbers[i]; i++)
+        {
+            this->numbers[i] = copy.numbers[i];
+        }
+    }
     return *this;
 }
 

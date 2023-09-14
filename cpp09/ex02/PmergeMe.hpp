@@ -1,8 +1,8 @@
 #ifndef PMERGEB_HPP
 #define PMERGEB_HPP
 
-#include <list>
 #include <deque>
+#include <vector>
 #include <ctime>
 #include <iostream>
 #include <string.h>

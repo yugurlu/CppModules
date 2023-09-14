@@ -11,8 +11,7 @@ Pmergeb::Pmergeb(const Pmergeb &copy)
 
 Pmergeb &Pmergeb::operator = (const Pmergeb &copy)
 {
-    if (this != &copy)
-        *this = copy;
+    (void)copy;
     return *this;
 }
 
