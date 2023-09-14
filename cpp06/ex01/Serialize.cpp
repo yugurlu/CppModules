@@ -12,8 +12,7 @@ Serialize::Serialize(const Serialize &copy)
 
 Serialize   &Serialize::operator = (const Serialize &copy)
 {
-    if (this != &copy)
-        *this = copy;
+    (void)copy;
     return *this;
 }
 

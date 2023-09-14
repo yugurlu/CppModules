@@ -18,7 +18,10 @@ ScalarConverter::ScalarConverter(const ScalarConverter &copy)
 ScalarConverter &ScalarConverter::operator=(const ScalarConverter &copy)
 {
 	if (this != &copy)
-		*this = copy;
+    {
+		this->type = copy.type;
+		this->value = copy.value;
+    }
 	return (*this);
 }
 
