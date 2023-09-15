@@ -16,6 +16,7 @@ class   Bureaucrat
         const   string name;
     public:
         Bureaucrat(int, const string);
+        
         int getGrade(void) const;
         string  getName(void) const;
 

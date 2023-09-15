@@ -21,8 +21,6 @@ class   Bureaucrat
         const   string name;
     public:
         Bureaucrat(int, const string);
-        
-        void setGrade(int);
         int getGrade(void) const;
         string  getName(void) const;
 

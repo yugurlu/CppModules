@@ -20,11 +20,6 @@ string  Bureaucrat::getName(void) const
     return  this->name;
 }
 
-void    Bureaucrat::setGrade(int grade)
-{
-    this->grade = grade;
-}
-
 void    Bureaucrat::incrementGrade(void)
 {
     if (this->grade - 1 < 1)
