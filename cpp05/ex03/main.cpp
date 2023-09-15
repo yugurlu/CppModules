@@ -14,7 +14,7 @@ int main()
 
         Bureaucrat b(99, "test");
         b.signFrom(*rrf);
-        rrf->execute(b);
+        b.executeForm(*rrf);
     }
     catch (std::exception &e)
     {

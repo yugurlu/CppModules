@@ -9,8 +9,7 @@ int main()
         ShrubberyCreationForm shrubbery("shrubbery");
 
         bureaucrat.signFrom(shrubbery);
-        bureaucrat.setGrade(138);
-        shrubbery.execute(bureaucrat);
+        bureaucrat.executeForm(shrubbery);
     }
     catch (std::exception &e)
     {

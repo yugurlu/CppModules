@@ -27,16 +27,16 @@ void    Bureaucrat::setGrade(int grade)
 
 void    Bureaucrat::incrementGrade(void)
 {
-    if (this->grade + 1 > 150)
+    if (this->grade - 1 > 150)
         throw GradeTooHighException();
-    this->grade += 1;
+    this->grade -= 1;
 }
 
 void    Bureaucrat::decrementGrade(void)
 {
-    if (this->grade - 1 > 1)
+    if (this->grade + 1 > 1)
         throw GradeTooLowException();
-    this->grade -= 1;
+    this->grade += 1;
 }
 
 void Bureaucrat::signFrom(AForm &AForm)
@@ -56,6 +56,20 @@ void Bureaucrat::signFrom(AForm &AForm)
     }
     else
         cout  << this->getName() << " couldn't sign " << AForm.getName() << " because AForm already signed!" << endl;
+}
+
+void    Bureaucrat::executeForm(AForm const &form)
+{
+    try
+    {
+        form.execute(*this);
+        cout << this->getName() << " executed " << form.getName() << endl;
+    }
+    catch (std::exception &e)
+    {
+        cout << this->getName() << " could not executed " << form.getName() << endl;
+        return;
+    }
 }
 
 ostream& operator << (ostream& os, const Bureaucrat &arg)
