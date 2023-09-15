@@ -55,7 +55,7 @@ void    Form::beSigned(Bureaucrat &arg)
 
 ostream &operator << (ostream &os, const Form &form)
 {
-    os <<form.getName() << endl << form.getGrade() << endl << form.getExecGrade() << endl << form.getSign() << endl;
+    os << form.getName() << endl << form.getGrade() << endl << form.getExecGrade() << endl << form.getSign() << endl;
     return os;
 }
 
