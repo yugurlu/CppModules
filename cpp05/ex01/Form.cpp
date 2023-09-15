@@ -6,9 +6,9 @@ Form::Form() : sign(false), grade(1), name(""), execGrade(1) {}
 Form::Form(string name, int grade, int execGrade) : sign(false), grade(grade), name(name), execGrade(execGrade)
 {
     if(this->grade > 150 || this->execGrade > 150)
-        throw GradeTooHighException();
-    else if (this->grade < 1 || this->execGrade < 1) 
         throw GradeTooLowException();
+    else if (this->grade < 1 || this->execGrade < 1) 
+        throw GradeTooHighException();
 }
 
 Form::Form(const Form &copy) : grade(copy.grade), name(copy.name), execGrade(copy.execGrade) {}

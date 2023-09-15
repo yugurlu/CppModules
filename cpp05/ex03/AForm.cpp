@@ -6,9 +6,9 @@ AForm::AForm() : sign(false) , grade(1), name(""), execGrade(1) {}
 AForm::AForm(string name, int grade, int execGrade) : sign(false), grade(grade), name(name), execGrade(execGrade)
 {
     if(this->grade > 150 || this->execGrade > 150)
-        throw GradeTooHighException();
-    else if (this->grade < 1 || this->execGrade < 1) 
         throw GradeTooLowException();
+    else if (this->grade < 1 || this->execGrade < 1) 
+        throw GradeTooHighException();
 }
 
 AForm::AForm(const AForm &copy) : grade(copy.grade), name(copy.name), execGrade(copy.execGrade) {}
@@ -79,6 +79,6 @@ bool    AForm::executer_control(const Bureaucrat &executor) const
     if (this->getSign() == false)
         throw FormNotSigned();
     else if (executor.getGrade() < this->getExecGrade())
-        throw GradeTooHighException();
+        throw GradeTooLowException();
     return true;
 }

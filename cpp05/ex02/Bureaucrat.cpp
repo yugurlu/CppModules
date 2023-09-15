@@ -4,9 +4,9 @@
 Bureaucrat::Bureaucrat(int grade, string name) : name(name)
 {
     if(grade > 150)
-        throw GradeTooHighException();
-    else if (grade < 1) 
         throw GradeTooLowException();
+    else if (grade < 1) 
+        throw GradeTooHighException();
     this->grade = grade;
 }
 
@@ -27,14 +27,14 @@ void    Bureaucrat::setGrade(int grade)
 
 void    Bureaucrat::incrementGrade(void)
 {
-    if (this->grade - 1 > 150)
+    if (this->grade - 1 < 1)
         throw GradeTooHighException();
     this->grade -= 1;
 }
 
 void    Bureaucrat::decrementGrade(void)
 {
-    if (this->grade + 1 > 1)
+    if (this->grade + 1 > 150)
         throw GradeTooLowException();
     this->grade += 1;
 }
