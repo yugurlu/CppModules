@@ -106,7 +106,7 @@ void    ScalarConverter::printFloat(void)
     else if (this->type == "float")
         cout << this->value << endl;
     else if (this->type == "double")
-        cout << this->type + ".0f" << endl;
+        cout << this->value + "f" << endl;
     else
         cout << "nanf" << endl;
 }
@@ -119,9 +119,9 @@ void    ScalarConverter::printDouble(void)
     else if (this->type == "int")
         cout << this->value + ".0" << endl;
     else if (this->type == "float")
-        cout <<this->value.substr(0, this->value.find('f')) << endl;
+        cout << this->value.substr(0, this->value.find('f')) << endl;
     else if (this->type == "double")
-        cout << this->type << endl;
+        cout << this->value << endl;
     else
         cout << "nan" << endl;
 }
