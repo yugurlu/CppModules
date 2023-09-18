@@ -45,7 +45,7 @@ class   Array
                 this->elements[i] = copy.elements[i];
             return *this;
         }
-        T &operator[](unsigned  int index)
+        T &operator [] (unsigned  int index)
         {
             if(index >= this->n)
                 throw std::out_of_range("Index out of range");

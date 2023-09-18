@@ -8,7 +8,7 @@ using std::cout;
 using std::endl;
 using std::string;
 
-template<typename T>
+template <typename T>
 void iter(T *array, int length, void(*func)(T const &))
 {
     for (int i = 0; i < length; i++)
