@@ -22,10 +22,6 @@ class Awsome
 std::ostream & operator << (std::ostream & o, const Awsome &a) { o << a.get_n(); return o; }
 
 
-
-
-
-
 int main( void )
 {
         int a = 2;
