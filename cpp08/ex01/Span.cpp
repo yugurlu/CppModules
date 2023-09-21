@@ -48,7 +48,7 @@ int Span::shortestSpan(void)
 {
     if (this->N.size() > 1)
     {
-        std::vector<int> sort = this->N;
+        std::deque<int> sort = this->N;
         std::sort(sort.begin(), sort.end());
 
         int smallDiff = sort[1] - sort[0];

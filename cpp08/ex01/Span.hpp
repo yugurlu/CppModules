@@ -2,7 +2,7 @@
 #ifndef SPAN_HPP
 #define SPAN_HPP
 
-#include <vector>
+#include <deque>
 #include <iostream>
 #include <bit>
 
@@ -14,7 +14,7 @@ class   Span
 {
     private:
         unsigned int maxLen;
-        std::vector<int> N;
+        std::deque<int> N;
     public:
         Span();
         Span(int);
