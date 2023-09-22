@@ -30,7 +30,7 @@ Span    &Span::operator = (const Span &copy)
 
 void    Span::addNumber(int number)
 {
-    if ((this->N.size() == 0 || *std::find(this->N.begin(),this->N.end(), number) == 0) && this->N.size() != this->maxLen)
+    if (this->N.size() != this->maxLen)
         this->N.push_back(number);
     else
         throw string("Number already added or max len!");
