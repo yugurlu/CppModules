@@ -12,7 +12,7 @@ class   RPN
 {
     private:
         string input;
-        int numbers[100];
+        float numbers[100000];
     public:
         RPN(string);
         ~RPN();

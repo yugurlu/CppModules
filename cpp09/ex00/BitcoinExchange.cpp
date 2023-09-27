@@ -31,7 +31,7 @@ void    BitcoinExchange::getDatabase(void)
         float value = std::stof(databaseFileLine.substr(11));
         this->database.insert(std::make_pair(databaseFileLine.substr(0, 10), value));
     }
-    databaseFile.close();  
+    databaseFile.close();
 }
 
 void    BitcoinExchange::readInputAndExchange(void)
@@ -54,15 +54,24 @@ void    BitcoinExchange::readInputAndExchange(void)
         {
             if (line.length() >= 14)
             {
-                year = std::stoi(line.substr(0,4));
-                month = std::stoi(line.substr(5, 2));
-                day = std::stoi(line.substr(8, 2));
-                value = std::stof(line.substr(13));
+                try
+                {
+                    year = std::stoi(line.substr(0,4));
+                    month = std::stoi(line.substr(5, 2));
+                    day = std::stoi(line.substr(8, 2));
+                    value = std::stof(line.substr(13));
+                }
+                catch (std::exception &e)
+                {
+                    cout << "Error: bad input => " << line.substr(0, line.find(' ')) << endl;
+                    continue;
+                }
             }
             else
-                return throw string("Error: bad input => " + line.substr(0,10));
-            if (year < 0 || month > 12 || month < 0 || day > 30 || day < 0)
-                return throw string("Error: bad input => " + line.substr(0,10));
+                return throw string("Error: bad input => " + line.substr(0, line.find(' ')));
+
+            if (year < 2009 || year > 2022 || month > 12 || month < 0 || day > 30 || day < 0)
+                return throw string("Error: bad input => " + line.substr(0, line.find(' ')));
             if (value < 0)
                 return throw string("Error: not a positive number.");
             if (value == INT_MAX)
@@ -98,6 +107,7 @@ void    BitcoinExchange::searchInDatabaseAndPrint(string year, string value)
     if (flag)
     {
         it = this->database.lower_bound(year);
+        it--;
         cout << year << " => " << value << " = " << (it->second * std::stof(value)) << endl;
     }
 }
