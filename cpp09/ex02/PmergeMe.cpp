@@ -78,3 +78,13 @@ void    Pmergeb::start(std::vector<unsigned int> &vector, std::deque<unsigned in
 
     cout << "Time to process a range of " << deque.size() << " elements with std::deque" << " : " << (float)timer / CLOCKS_PER_SEC * 1000 << " us" << endl;
 }
+
+bool    any_character(char *arr)
+{
+    for (int i = 0; arr[i]; i++)
+    {
+        if (!isdigit(arr[i]))
+            return true;
+    }
+    return false;
+}

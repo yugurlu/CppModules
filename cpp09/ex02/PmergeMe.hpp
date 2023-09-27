@@ -29,4 +29,6 @@ class   Pmergeb
         void    insertionSort(C &, int, int);
 };
 
+bool    any_character(char *arr);
+
 #endif

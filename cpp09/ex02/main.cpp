@@ -9,7 +9,7 @@ int main(int ac, char **av)
     {
         for (int i = 1; i < ac; i++)
         {
-            if (std::atoi(av[i]) < 0)
+            if (std::atoi(av[i]) < 0 || any_character(av[i]))
             {
                 cout << "Error" << endl;
                 exit(0);
