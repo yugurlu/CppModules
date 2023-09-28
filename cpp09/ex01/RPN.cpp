@@ -37,6 +37,30 @@ int RPN::calculator(int number1, int number2, char oprtr)
         return 0;
 }
 
+bool    RPN::control(void)
+{
+    int number_count = 0;
+    int operator_count = 0;
+    for (int i = 0; this->input[i]; i++)
+    {
+        if (this->input[i] == ' ')
+            continue;
+        else if (this->input[i] == '+' || this->input[i] == '-' || this->input[i] == '*' || this->input[i] == '/')
+            operator_count++;
+        else if (isdigit(this->input[i]))
+            number_count++;
+        else
+        {
+            cout << "ERROR" << endl;
+            return false;
+        }
+    }
+    if (number_count - 1 == operator_count)
+        return true;
+    cout << "ERROR" << endl;
+    return false;
+}
+
 void    RPN::readRPN(void)
 {
     int i = 0;

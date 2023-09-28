@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <string.h>
+#include <list>
+#include <array>
 
 using std::cout;
 using std::endl;
@@ -12,7 +14,7 @@ class   RPN
 {
     private:
         string input;
-        float numbers[100000];
+        std::array<int, 1000000> numbers;
     public:
         RPN(string);
         ~RPN();
@@ -21,6 +23,7 @@ class   RPN
 
         void    readRPN(void);
         int    calculator(int, int, char);
+        bool     control(void);
 };
 
 #endif
