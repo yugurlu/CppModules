@@ -52,7 +52,7 @@ void    BitcoinExchange::readInputAndExchange(void)
         int year, month, day;
         try
         {
-            if (line.length() >= 14)
+            if (line.substr(0, line.find(' ')).size() == 10)
             {
                 try
                 {
@@ -74,7 +74,7 @@ void    BitcoinExchange::readInputAndExchange(void)
                 return throw string("Error: bad input => " + line.substr(0, line.find(' ')));
             if (value < 0)
                 return throw string("Error: not a positive number.");
-            if (value == INT_MAX)
+            if (value > 1000)
                 return throw string("Error: too large a number.");
 
             this->searchInDatabaseAndPrint(line.substr(0,10), line.substr(13));

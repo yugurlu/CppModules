@@ -3,7 +3,7 @@
 
 int main(int ac, char **av)
 {
-    if (ac > 1)
+    if (ac == 2)
     {
         try
         {
@@ -17,5 +17,5 @@ int main(int ac, char **av)
         }
     }
     else
-        cout << "Error: could not open file." << endl;
+        cout << "Error: Wrong inputs." << endl;
 }
