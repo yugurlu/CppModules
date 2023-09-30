@@ -62,7 +62,7 @@ void    Pmergeb::start(std::vector<unsigned int> &vector, std::deque<unsigned in
     //VECTOR
     clock_t timer = clock();
     this->fillContainer(vector, av);
-    this->sort(vector, 10);
+    this->sort(vector, 2);
     timer = clock() - timer;
     
     cout << "After:  ";
@@ -73,7 +73,7 @@ void    Pmergeb::start(std::vector<unsigned int> &vector, std::deque<unsigned in
     //DEQUE
     timer = clock();
     this->fillContainer(deque, av);
-    this->sort(deque, 10);
+    this->sort(deque, 2);
     timer = clock() - timer;
 
     cout << "Time to process a range of " << deque.size() << " elements with std::deque" << " : " << (float)timer / CLOCKS_PER_SEC * 1000 << " us" << endl;
