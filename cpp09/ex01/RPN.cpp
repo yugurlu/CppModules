@@ -80,11 +80,14 @@ void    RPN::readRPN(void)
                 this->numbers[0] = this->calculator(this->numbers[0], this->numbers[1], this->input[i]);
                 number_count = 1;
             }
-            else
+            else if (number_count == 3)
             {
-                this->numbers[0] = this->calculator(this->numbers[0], this->calculator(this->numbers[1], this->numbers[2], this->input[i]), this->input[i + 2]);
+                int nextOperator = i + 1;
+                while (this->input[nextOperator] != '+' && this->input[nextOperator] != '-' && this->input[nextOperator] != '*' && this->input[nextOperator] != '/')
+                    nextOperator++;
+                this->numbers[0] = this->calculator(this->numbers[0], this->calculator(this->numbers[1], this->numbers[2], this->input[i]), this->input[nextOperator]);
                 number_count = 1;
-                i += 2;
+                i += nextOperator - i;
             }
             this->numbers[1] = 0;
             n = 1;
