@@ -16,9 +16,7 @@ RPN &RPN::operator = (const RPN &copy)
     {
         this->input = copy.input;
         for (int i = 0; this->numbers[i]; i++)
-        {
             this->numbers[i] = copy.numbers[i];
-        }
     }
     return *this;
 }
@@ -89,12 +87,17 @@ void    RPN::readRPN(void)
                 number_count = 1;
                 i += nextOperator - i;
             }
+            else
+            {
+                cout << "ERROR" << endl;
+                return;
+            }
             this->numbers[1] = 0;
             n = 1;
         }
         else if (isalpha(this->input[i]) || this->input[i] != ' ')
         {
-            cout << "Error" << endl;
+            cout << "ERROR" << endl;
             return;   
         }
         i++;
